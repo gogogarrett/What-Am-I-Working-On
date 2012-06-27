@@ -1,0 +1,22 @@
+<h1>What am I working on?</h1>
+
+<form id="new_entry">
+  <input type="text" name="task" id="new_entry_task">
+  <input type="submit" value="Add">
+</form>
+
+<ul>
+  <%  
+    var entry, i, length, entry;
+    ref = entries.models;
+    ref.reverse();
+  %>
+
+  <% for (i=0, length = ref.length; i < length ; i++) { %>
+    <% entry = ref[i]; %>
+    <li>
+      <strong> <%= entry.get('task') %> </strong> 
+      <%= $.format.date(new Date(entry.get('created_at')), "created at: ddd - hh:mm a") %>
+    </li>
+  <% } %>
+</ul>
